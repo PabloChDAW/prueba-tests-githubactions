@@ -20,10 +20,10 @@ jobs:
     - name: Run Playwright tests
       run: |
         # Ejecutar la prueba mala y probar que no ejecuta la buena
-        npx playwright test tests/buena.spec.ts --max-failures=1
+        npx playwright test tests/mala.spec.ts --max-failures=1
         
         # Prueba buena
-        npx playwright test tests/mala.spec.ts --max-failures=1
+        npx playwright test tests/buena.spec.ts --max-failures=1
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
